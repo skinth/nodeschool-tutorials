@@ -7,11 +7,12 @@ var count = 0,
 
 async.whilst(
     () => {
-        return s !== 'meerkat'
+        return s != 'meerkat'
     },
     (next) => {
+        console.log(url)
         http.get(url, (res) => {
-            console.log(res)
+            console.log('res: ', res)
             count++
             var body = ''
             res.on('data', (chunk) => {
